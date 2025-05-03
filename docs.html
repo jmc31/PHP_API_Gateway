@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Documentation</title>
+</head>
+<body>
+    <h1>API Gateway - Documentation</h1>
+
+    <h2>Authentication</h2>
+    <p>All requests must include a valid API key in the <code>X-API-Key</code> HTTP header.</p>
+
+    <h2>Endpoints</h2>
+
+    <h3>GET /api/users</h3>
+    <p>Returns a list of users.</p>
+    <pre>
+Sample Response:
+[
+    {"id": 1, "name": "Alice"},
+    {"id": 2, "name": "Bob"}
+]
+    </pre>
+
+    <h3>GET /api/products</h3>
+    <p>Returns a list of products.</p>
+    <pre>
+Sample Response:
+[
+    {"sku": "A123", "productName": "Widget"},
+    {"sku": "B456", "productName": "Gadget"}
+]
+    </pre>
+
+    <h2>Error Responses</h2>
+    <ul>
+        <li>401 Unauthorized - Missing or invalid API Key</li>
+        <li>429 Too Many Requests - Rate limit exceeded (10 requests per minute)</li>
+        <li>404 Not Found - Invalid API path</li>
+    </ul>
+</body>
+</html>

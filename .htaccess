@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /my_api_gateway/
+
+# Route API calls to gateway.php
+RewriteRule ^api/(.*)$ gateway.php?request_path=$1 [L,QSA]
+
+# Prevent direct access to the services directory
+RewriteRule ^services/.*$ - [F,L]
